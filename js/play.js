@@ -86,7 +86,7 @@ export default class Play extends Component {
     return (
       <FlexContainer>
         <FlexContainer style={styles.pond}>
-          <LevelDisplay 
+          <LevelDisplay
             level={playLevel}
             attempt={parsedAttempt}
           />
@@ -95,7 +95,7 @@ export default class Play extends Component {
 
           <FlexContainer>
             <ScrollView>
-              <LevelInstruction 
+              <LevelInstruction
                 instruction={instruction}
               />
             </ScrollView>
@@ -112,7 +112,7 @@ export default class Play extends Component {
                   values: updateValues
                 });
 
-              }.bind(this)}
+              }}
               values={values}
               before={playLevel.before}
               after={playLevel.after}

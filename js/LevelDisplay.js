@@ -30,12 +30,13 @@ let getImageLinks = (board, append) => {
 }
 
 let getImages = (images, styleMap = {}) => {
-  return images.map(image => 
-      <Image 
-        source={{uri: image}} 
-        style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]} 
+  return images.map((image, i) =>
+      <Image
+        key={i}
+        source={{uri: image}}
+        style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]}
         resizeMode="contain"
-      /> 
+      />
   )
 }
 
@@ -52,7 +53,7 @@ export default class LevelDisplay extends Component {
       attempt,
       level
     } = this.props;
-    
+
     let {
       board,
       style,
